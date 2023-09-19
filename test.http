@@ -1,5 +1,36 @@
 # Browse Books as any user# Browse Books as any user
-GET http://localhost:4004/odata/v4/catalog
-  # &$select=title,stock
+# GET http://localhost:4004/odata/v4/buy/Orders
+#   # &$select=title,stock
+#   # &$expand=currency
+#   # &sap-locale=de
+
+#   ###
+# # Submit Order
+# #
+# POST http://localhost:4004/odata/v4/admin/Books
+# Content-Type: application/json;IEEE754Compatible=true
+# Authorization: Basic alice:
+
+# {
+#   "ID": 2,
+#   "title": "Poems : Pocket Poets",
+#   "descr": "The Everyman's Library Pocket Poets hardcover series is popular for its compact size and reasonable price which does not compromise content. Poems: Bronte contains poems that demonstrate a sensibility elemental in its force with an imaginative discipline and flexibility of the highest order. Also included are an Editor's Note and an index of first lines.",
+#   "author": { "ID": 101 },
+#   "stock": 5,
+#   "price": "12.05",
+#   "currency_code": "USD"
+# }
+
+# POST http://localhost:4004/odata/v4/buy/Orders
+# Content-Type: application/json;IEEE754Compatible=true
+
+# { "Items":[{"book_ID":201, "amount":5}]  }
+
+# Browse Books as any user
+# GET http://localhost:4004/odata/v4/catalog/Books?
+#    &$filter=ID eq 2
+
+GET http://localhost:4004/odata/v4/catalog/Books?
+ # &$select=title,stock
   # &$expand=currency
-  # &sap-locale=de
+  &sap-locale=de
