@@ -1,0 +1,5 @@
+# Browse Books as any user# Browse Books as any user
+GET http://localhost:4004/odata/v4/catalog
+  # &$select=title,stock
+  # &$expand=currency
+  # &sap-locale=de
